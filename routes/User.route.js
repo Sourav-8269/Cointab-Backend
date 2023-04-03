@@ -78,7 +78,7 @@ userRouter.post("/login",async(req,res)=>{
                 }else{
                     user[0].incorrect_password_count++,
                     await user[0].save()
-                    res.send({"msg":"Wrong Credentials","Remaning try":5-user[0].incorrect_password_count+1});
+                    res.send({"msg":"Wrong Credentials","Remaning":5-user[0].incorrect_password_count+1});
                     // console.log(err);
                 }
             });
